@@ -117,8 +117,6 @@
 - name: Setting Up New 19c {{ env_type }} for HAS
   ansible.builtin.command: "ksh93 {{ temp_dir }}/scripts/grid_install.sh"
   register: new_grid_out
-  become: yes
-  become_user: "{{ grid_user }}"
 - debug: var=new_grid_out.stdout
 
 - name: Checking if rootupgrade.sh script was already executed
