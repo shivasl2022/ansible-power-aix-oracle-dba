@@ -1,6 +1,6 @@
 # Copyright (c) IBM Corporation 2024
 # This script performs Grid silent install with "upgrade" option along with Release Update Patch (if needed).
-
+su - {{ grid_user }} <<EOF
 grid_home="{{ grid_home }}"
 temp_dir="{{ temp_dir }}"
 ru_stage="{{ ru_stage }}"
@@ -36,3 +36,4 @@ if [ ! -f "{{ temp_dir }}/done/grid.patch.done" ] && [ $apply_ru == "True" ]; th
 fi
 
 exit 0
+EOF
